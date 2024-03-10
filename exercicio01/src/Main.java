@@ -5,21 +5,21 @@ import java.net.http.HttpResponse;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String textNames = retornaTextoDoServidor("https://venson.net.br/resources/data/nomes.txt");
-        String name = retornaElementoAleatorio(textNames);
+        String textNames = returnTextServer("https://venson.net.br/resources/data/nomes.txt");
+        String name = returnRandomNumber(textNames);
 
-        String textSurname = retornaTextoDoServidor("https://venson.net.br/resources/data/sobrenomes.txt");
-        String surname = retornaElementoAleatorio(textSurname);
+        String textSurname = returnTextServer("https://venson.net.br/resources/data/sobrenomes.txt");
+        String surname = returnRandomNumber(textSurname);
 
-        String textposition = retornaTextoDoServidor("https://venson.net.br/resources/data/posicoes.txt");
-        String position = retornaElementoAleatorio(textposition);
+        String textposition = returnTextServer("https://venson.net.br/resources/data/posicoes.txt");
+        String position = returnRandomNumber(textposition);
         position = position.replace(",", "");
         position = position.replace("\"","");
 
-        String textClub = retornaTextoDoServidor("https://venson.net.br/resources/data/clubes.txt");
-        String club = retornaElementoAleatorio(textClub);
+        String textClub = returnTextServer("https://venson.net.br/resources/data/clubes.txt");
+        String club = returnRandomNumber(textClub);
 
-        short age = geraNumeroAleatorio(17,41);
+        short age = genereteRandomNumber(17,41);
 
         System.out.println(name
                 +" "
@@ -30,10 +30,11 @@ public class Main {
                 + position
                 + ". Atualmento defende o "
                 + club
+                + "."
         );
     }
 
-    public static String retornaTextoDoServidor(String url) throws Exception {
+    public static String returnTextServer(String url) throws Exception {
         // Cria um cliente HTTP
         HttpClient cliente = HttpClient.newHttpClient();
         // Cria uma requisicao HTTP
@@ -45,7 +46,7 @@ public class Main {
         return texto;
     }
 
-    public static String retornaElementoAleatorio(String texto) {
+    public static String returnRandomNumber(String texto) {
         // Divide a variavel em varias strings (uma pra cada nome)
         String[] listaDeNomes = texto.split("\n");
         // Cria um numero aleatorio de acordo com o vetor
@@ -54,7 +55,7 @@ public class Main {
         return listaDeNomes[indiceAleatorio];
     }
 
-    public static short geraNumeroAleatorio(int menor, int maior){
+    public static short genereteRandomNumber(int menor, int maior){
         short numeroAleatorio = (short) Math.floor((Math.random() * (maior - menor))+17);
                 return numeroAleatorio;
     }
