@@ -1,8 +1,5 @@
 package org.example;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Indicacao {
     private Indicavel indicavel;
     private String categoria;
@@ -10,6 +7,9 @@ public class Indicacao {
     public Indicacao(Indicavel indicavel, String categoria) {
         this.indicavel = indicavel;
         this.categoria = categoria;
+    }
+
+    public Indicacao() {
     }
 
     public Indicavel getIndicavel() {

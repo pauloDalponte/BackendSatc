@@ -1,35 +1,15 @@
 package org.example;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
-@Component
-@Scope("prototype")
 public class Filme implements Indicavel{
     private String nome;
     private String genero;
     private boolean elegivel;
-    private short numeroDeIndicacoes;
 
 
-    @Override
-    public void setNumeroDeIndicacoes(short numeroDeIndicacoes) {
-        this.numeroDeIndicacoes = numeroDeIndicacoes;
-    }
-
-    @Override
-    public boolean elegivel() {
-        return false;
-    }
-
-    @Override
-    public short numeroDeIndicacoes() {
-        return 0;
-    }
-
-    public Filme (String nome,String genero){
+    public Filme (String nome,String genero,boolean elegivel) {
         this.nome = nome;
         this.genero = genero;
+        this.elegivel = elegivel;
     }
 
     public String getNome() {
@@ -47,4 +27,15 @@ public class Filme implements Indicavel{
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
+    @Override
+    public boolean elegivel() {
+        return false;
+    }
+
+    @Override
+    public short numeroDeIndicacoes() {
+        return 0;
+    }
+
 }
