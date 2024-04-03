@@ -4,13 +4,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 import java.util.Random;
 
 @SpringBootApplication
-public class JogadorApplication {
+public class WebServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JogadorApplication.class, args);
+        SpringApplication.run(WebServiceApplication.class, args);
     }
 
 }
