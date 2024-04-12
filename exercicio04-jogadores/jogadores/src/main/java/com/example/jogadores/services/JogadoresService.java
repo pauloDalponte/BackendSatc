@@ -1,10 +1,9 @@
-package com.example.demo.services;
+package com.example.jogadores.services;
 
 import org.springframework.stereotype.Service;
 
-
 @Service
-public class VensonService {
+public class JogadoresService {
 
     private static String retornaIndiceAleatorio(String stringao) {
         // Quebrando o texto em varias strings (colocando dentro de um vetor)
