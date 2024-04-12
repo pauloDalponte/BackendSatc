@@ -11,7 +11,12 @@ public class OscarService {
     private List<Indicacao> indicacoes = new ArrayList<>();
 
     public void adicionarIndicacao(Indicacao indicacao) {
-        indicacoes.add(indicacao);
+        if (indicacao.getIndicavel().elegivel()){
+            indicacoes.add(indicacao);    
+        }else{
+            System.out.println("O candidato não é elegível!");
+        }
+        
     }
 
     public void mostrarListaIndicados() {

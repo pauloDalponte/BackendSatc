@@ -12,9 +12,9 @@ public class Ator implements Indicavel {
     }
 
     @Override
-    public boolean elegivel() {
-        return elegivel();
-    }
+public boolean elegivel() {
+    return elegivel;
+}
 
     @Override
     public short numeroDeIndicacoes() {
